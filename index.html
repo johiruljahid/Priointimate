@@ -1,0 +1,127 @@
+
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Prio Intimate - প্রিয় অন্তরঙ্গ</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#FF4D94', // Sexy Hot Pink
+            secondary: '#A64DFF', // Passion Purple
+            accent: '#FFD700', // Gold
+            softBg: '#FFF0F6', // Light Romantic Pink
+            komola: '#FF8C00', // Orange color
+          },
+          boxShadow: {
+            '3d-pop': '0 25px 50px -12px rgba(255, 77, 148, 0.4), inset 0 -4px 8px rgba(0,0,0,0.1), inset 0 4px 8px rgba(255,255,255,0.8)',
+            '3d-card': '0 30px 60px rgba(0,0,0,0.15), 0 0 20px rgba(255,77,148,0.1), inset 0 0 0 2px rgba(255,255,255,1)',
+            'glass': '0 8px 32px 0 rgba(255, 77, 148, 0.1)',
+            '3d-input': 'inset 0 4px 8px rgba(0,0,0,0.05), 0 4px 10px rgba(255,255,255,1)',
+          },
+        },
+      },
+    };
+  </script>
+  <style>
+    /* Global Scrollbar Hiding */
+    html, body, * {
+      scrollbar-width: none; /* Firefox */
+      -ms-overflow-style: none; /* IE and Edge */
+    }
+    
+    *::-webkit-scrollbar {
+      display: none; /* Chrome, Safari and Opera */
+    }
+
+    body {
+      font-family: 'Hind Siliguri', sans-serif;
+      background: radial-gradient(circle at top right, #FFFFFF, #FFF5F8, #FFE6EF);
+      color: #333;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+    .fancy-font { font-family: 'Dancing Script', cursive; }
+    
+    .text-3d {
+      color: #2D1622;
+      text-shadow: 1px 1px 0px #fff, 
+                   2px 2px 0px rgba(255, 77, 148, 0.2), 
+                   3px 3px 10px rgba(0,0,0,0.1);
+    }
+    
+    /* Optimized 3D Style with Custom Color #FF4F95 */
+    .text-3d-color {
+      font-weight: 900;
+      background: #FF4F95;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      filter: drop-shadow(0 15px 30px rgba(255, 79, 149, 0.3));
+      text-shadow: 
+        0 1px 0 #f0f0f0,
+        0 2px 0 #e0e0e0,
+        0 3px 0 #d0d0d0,
+        0 4px 0 #c0c0c0,
+        0 5px 0 #b0b0b0,
+        0 6px 1px rgba(0,0,0,.1),
+        0 0 5px rgba(0,0,0,.1),
+        0 1px 3px rgba(0,0,0,.3),
+        0 3px 5px rgba(0,0,0,.2),
+        0 5px 10px rgba(0,0,0,.25),
+        0 10px 10px rgba(0,0,0,.2),
+        0 20px 20px rgba(0,0,0,.15);
+      letter-spacing: -3px;
+      padding: 10px 20px;
+      display: inline-block;
+      transform: skewX(-2deg);
+    }
+
+    .floating-heart {
+      position: fixed;
+      pointer-events: none;
+      z-index: -1;
+      animation: floatUp 8s linear infinite;
+      opacity: 0.2;
+    }
+    @keyframes floatUp {
+      0% { transform: translateY(110vh) translateX(0) rotate(0deg); opacity: 0; }
+      20% { opacity: 0.5; }
+      80% { opacity: 0.5; }
+      100% { transform: translateY(-20vh) translateX(50px) rotate(360deg); opacity: 0; }
+    }
+    
+    #root {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+  </style>
+<script type="importmap">
+{
+  "imports": {
+    "react/": "https://esm.sh/react@^19.2.4/",
+    "react": "https://esm.sh/react@^19.2.4",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+    "@google/genai": "https://esm.sh/@google/genai@^1.39.0",
+    "firebase/app": "https://www.gstatic.com/firebasejs/11.3.1/firebase-app.js",
+    "firebase/firestore": "https://www.gstatic.com/firebasejs/11.3.1/firebase-firestore.js",
+    "firebase/auth": "https://www.gstatic.com/firebasejs/11.3.1/firebase-auth.js",
+    "firebase/": "https://esm.sh/firebase@^12.8.0/",
+    "@vitejs/plugin-react": "https://esm.sh/@vitejs/plugin-react@^5.1.3",
+    "vite": "https://esm.sh/vite@^7.3.1"
+  }
+}
+</script>
+</head>
+<body>
+  <div id="root"></div>
+  <div class="floating-heart" style="left: 5%; font-size: 30px;">💖</div>
+  <div class="floating-heart" style="left: 50%; animation-delay: 5s; font-size: 35px;">🫦</div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>

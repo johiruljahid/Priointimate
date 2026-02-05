@@ -1,0 +1,7 @@
+{
+  "name": "Prio Intimate",
+  "description": "Prio Intimate is a premium web application for online chatting with AI-powered girl profiles, featuring smart user profiles, auto-generated coupon codes, referral management, exclusive content, and subscription packages, all designed with a vibrant 3D aesthetic and mobile-first approach for Bangladeshi users.",
+  "requestFramePermissions": [
+    "microphone"
+  ]
+}
