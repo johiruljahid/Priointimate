@@ -15,6 +15,13 @@ export const generateMultimodalText = async (
   mediaParts: MediaPart[] = []
 ): Promise<string> => {
   try {
+    // API Key must be obtained exclusively from the environment variable process.env.API_KEY.
+    if (!process.env.API_KEY) {
+      console.error("API Key is missing in process.env");
+      throw new Error("API Key not found.");
+    }
+
+    // Always use new GoogleGenAI({apiKey: process.env.API_KEY});
     const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
     
     // Construct parts for the Gemini API
@@ -29,6 +36,7 @@ export const generateMultimodalText = async (
       });
     });
 
+    // Use ai.models.generateContent to query GenAI with model name and prompt/parts
     const response = await ai.models.generateContent({
       model: 'gemini-3-flash-preview',
       contents: { parts },
@@ -39,6 +47,7 @@ export const generateMultimodalText = async (
       },
     });
 
+    // Extract text output using the .text property (not a method)
     const text = response.text;
     if (!text) {
       throw new Error("No response from AI.");
